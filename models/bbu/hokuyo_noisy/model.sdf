@@ -9,7 +9,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://hokuyo/meshes/hokuyo.dae</uri>
+            <uri>model://hokuyo_noisy/meshes/hokuyo.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -30,10 +30,10 @@
           </cylinder>
         </geometry>
       </collision>
-      <sensor name="laser" type="ray">
-        <pose>0.01 0 0.0175 0 -0 0</pose>
-        <visualize>true</visualize>
-        <ray>
+      <sensor name="gpu_laser" type="gpu_lidar">
+        <pose>0.0 0 0.0 0 -0 0</pose>
+        <update_rate>10</update_rate>
+	<lidar>
           <scan>
             <horizontal>
               <samples>640</samples>
@@ -41,6 +41,12 @@
               <min_angle>-2.26889</min_angle>
               <max_angle>2.268899</max_angle>
             </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>0.01</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
           </scan>
           <range>
             <min>0.08</min>
@@ -52,18 +58,8 @@
             <mean>0.0</mean>
             <stddev>0.01</stddev>
           </noise>
-        </ray>
-        <!--plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
-          <topicName>laser</topicName>
-          <frameName>laser_link</frameName>
-        </plugin-->
-		<!--plugin name="laser" filename="libgazebo_ros_laser.so">
-			<topicName>laser</topicName>
-			<frameName>laser_link</frameName>
-			<robotNamespace>robot_ns_$(robotNS)</robotNamespace>
-		</plugin--> 
-        <always_on>1</always_on>
-        <update_rate>30</update_rate>
+        </lidar>
+        <visualize>true</visualize>
       </sensor>
     </link>
   </model>

@@ -25,12 +25,11 @@
             <uri>model://mps_storage/meshes/mps_storage.dae</uri>
           </mesh>
         </geometry>
-	<material>
-          <script>
-            <uri>model://mps_storage/materials/scripts</uri>
-            <uri>model://mps_storage/materials/textures</uri>
-            <name>mps_storage</name>
-          </script>
+        <material> 
+          <ambient>0.5 0.5 0.5 1</ambient>
+          <diffuse>0.7 0.7 0.7 1</diffuse>
+           <specular>0.1 0.1 0.1 1</specular>
+           <emissive>0 0 0 1</emissive>
         </material>
         <cast_shadows>false</cast_shadows>
       </visual>
