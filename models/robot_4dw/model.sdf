@@ -96,7 +96,7 @@
         <topic>/model/robot_4dw/laser</topic>
         <update_rate>10</update_rate>
         <enable_metrics>true</enable_metrics>
-        <gz_frame_id>robot_4dw/base_footprint</gz_frame_id>
+        <gz_frame_id>robot_4dw/laser_frame</gz_frame_id>
         <lidar>
           <scan>
             <horizontal>
@@ -171,6 +171,7 @@
       <topic>camera</topic>
     </sensor>
     </link>
+
     <joint name="depth_camera_joint" type="fixed">
       <parent>base_footprint</parent>
       <child>depth_camera_frame</child>
