@@ -42,7 +42,7 @@
 
 		<include>
 		  <uri>model://robot_2dw1c</uri>
-		  <pose>-4.5 0.5 0 0 0 1.57</pose>
+		  <pose>-6.5 0.5 0.20 0 0 0</pose>
 		</include>
 
 
@@ -53,7 +53,7 @@
 
 		<include>
 		  <uri>model://robot_4dw</uri>
-		  <pose>-6.5 0.5 0 0 0 0</pose>
+		  <pose>-4.5 0.5 0 0 0 1.57</pose>
 		</include>
 
 		<!-- Robotinos  -->
