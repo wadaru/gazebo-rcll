@@ -1,7 +1,9 @@
 <?xml version="1.0" ?>
 <sdf version='1.11'>
   <model name='robot_4dw'>
-    <link name='base_footprint'>
+    <link name='base_footprint'/>
+    <link name='base_link'>
+      <pose relative_to="base_footprint">0 0 0.05 0 0 0</pose>
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>4.001</mass>
@@ -193,12 +195,17 @@
       <child>depth_camera_frame</child>
     </joint>
 
+    <joint name="base_footprint_joint" type="fixed">
+      <parent>base_footprint</parent>
+      <child>base_link</child>
+    </joint>
+
     <frame name='base_joint' attached_to='base_footprint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
-    <frame name='base_link' attached_to='base_joint'>
+    <!-- <frame name='base_link' attached_to='base_joint'>
       <pose>0 0 0 0 0 0</pose>
-    </frame>
+    </frame> -->
 
     <plugin
       filename="gz-sim-velocity-control-system"
